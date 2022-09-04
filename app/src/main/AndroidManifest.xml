@@ -54,11 +54,12 @@
             android:screenOrientation="sensorLandscape"
             android:supportsPictureInPicture="true"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"></activity>
+        <!-- 支持畫中畫  android:supportsPictureInPicture="true" 預設是"true" 改成"false"-->
         <activity
             android:name=".ui.activity.PlayActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="sensorLandscape"
-            android:supportsPictureInPicture="true"
+            android:supportsPictureInPicture="false"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"></activity>
         <activity
             android:name=".ui.activity.PushActivity"
