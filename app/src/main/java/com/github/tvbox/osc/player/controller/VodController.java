@@ -662,7 +662,7 @@ public class VodController extends BaseController {
         long t = date.getTimeInMillis();
         Date afterAdd = new Date(t + TimeRemaining);
         SimpleDateFormat timeEnd = new SimpleDateFormat("hh:mm aa", Locale.ENGLISH);
-        mTimeEnd.setText("Ends at " + timeEnd.format(afterAdd));
+        mTimeEnd.setText("結束時間 " + timeEnd.format(afterAdd));
 
         mCurrentTime.setText(PlayerUtils.stringForTime(position));
         mTotalTime.setText(PlayerUtils.stringForTime(duration));
@@ -767,7 +767,7 @@ public class VodController extends BaseController {
         mHandler.removeMessages(1003);
         mHandler.sendEmptyMessage(1002);
         mHandler.post(mTimeRunnable);
-        mHandler.postDelayed(mHideBottomRunnable, 10000);
+        mHandler.postDelayed(mHideBottomRunnable, 5000); // 控制器無動作幾毫秒後自動隱藏
     }
 
     Runnable mHideBottomRunnable = new Runnable() {
@@ -797,7 +797,7 @@ public class VodController extends BaseController {
         }
         if (isBottomVisible()) {
             mHandler.removeCallbacks(mHideBottomRunnable);
-            mHandler.postDelayed(mHideBottomRunnable, 10000);
+            mHandler.postDelayed(mHideBottomRunnable, 5000); // 控制器無動作幾毫秒後自動隱藏
             return super.dispatchKeyEvent(event);
         }
         if (action == KeyEvent.ACTION_DOWN) {
